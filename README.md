@@ -8,7 +8,7 @@ This readme contains the goals and criteria for the challenge. It will define a 
 ### Race Coordinator features
 - The web app should allow a user to select a day and create race events within that day.
 - A Race should allow for the definition of the following:
-  - Vechile restrictions of class and type.
+  - Vehicle restrictions of class and type.
   - Possible track (not sure how hard or easy)
   - Race type (dirt/street/drag/etc..)
   - Restrictions should also include a free form section for the specification of rules of say how you can upgrade. So, free text.
