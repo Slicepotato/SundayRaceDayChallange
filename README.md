@@ -1,4 +1,4 @@
-# Mission Deep Coding Challenge: Sunday RaceDay
+# Mission Deep Coding Challenge: Sunday Race Day
 (Yes, I'm challenged by spelling)
 A repo to fork for our latest coding challenge, Sunday Race Day 
 
