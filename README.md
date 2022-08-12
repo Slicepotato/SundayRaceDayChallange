@@ -1,5 +1,5 @@
 # Mission Deep Coding Challenge: Sunday RaceDay
-
+(Yes, I'm challenged by spelling)
 A repo to fork for our latest coding challenge, Sunday Race Day 
 
 This readme contains the goals and criteria for the challenge. It will define a web app that will allow a user to create a race or race series for Forza Horizon 5, it's criteria and track scoring.
