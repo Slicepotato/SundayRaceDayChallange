@@ -2,7 +2,7 @@
   <main class="login">
     <section class="forms">
       <h1> This is Login</h1>
-      <form action="" class="form form__login">
+      <form class="form form__login" @submit.prevent="login">
         <ul>
           <li>
             <input 
@@ -15,7 +15,7 @@
             <input 
               type="password"
               placeholder="Password"
-              v-model="loginForm.email"
+              v-model="loginForm.password"
               required />
           </li>
           <li>
@@ -23,7 +23,6 @@
           </li>
         </ul>
       </form>
-      <form action="" class="login"></form>
     </section>
   </main>
 </template>
@@ -45,9 +44,14 @@ export default {
     const loginForm = ref({});
     const store = useStore();
 
+    const login = () => {
+      store.dispatch('login', loginForm.value);
+    }
+
     return {
       loginForm,
-      store
+      store,
+      login
     }
   },
   mounted() {

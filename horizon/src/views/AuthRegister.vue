@@ -1,8 +1,8 @@
 <template>
-  <main class="login">
+  <main class="registration">
     <section class="forms">
       <h1> This is Registration</h1>
-      <form action="" class="form form__register">
+      <form action="" class="form form__register" @submit.prevent="register">
         <ul>
           <li>
             <input 
@@ -15,7 +15,7 @@
             <input 
               type="password"
               placeholder="Password"
-              v-model="registerForm.email"
+              v-model="registerForm.password"
               required />
           </li>
           <li>
@@ -23,7 +23,6 @@
           </li>
         </ul>
       </form>
-      <form action="" class="login"></form>
     </section>
   </main>
 </template>
@@ -33,7 +32,7 @@ import { ref } from 'vue';
 import { useStore } from 'vuex';
 
 export default {
-  name: 'LoginView',
+  name: 'RegisterView',
   data() {
     return {
     }
@@ -45,9 +44,14 @@ export default {
     const registerForm = ref({});
     const store = useStore();
 
+    const register = () => {
+      store.dispatch('register', registerForm.value);
+    }
+
     return {
       registerForm,
-      store
+      store,
+      register
     }
   },
   mounted() {
