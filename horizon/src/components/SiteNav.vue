@@ -7,6 +7,9 @@
             <li v-if="isLoggedIn">
                 <router-link :to="{path: '/dashboard'}">Dashboard</router-link>
             </li>
+            <li v-if="isLoggedIn">
+                <router-link :to="{path: '/create-race'}">Create Race</router-link>
+            </li>
             <li>
                 <router-link :to="{path: '/login'}" class="login-link">Log in</router-link>
             </li>

@@ -18,9 +18,17 @@ const routes = [
     component: () => import('@/views/AuthRegister.vue')
   },
   {
-    path: '/user',
+    path: '/dashboard',
     name: 'UserView',
     component: () => import('@/views/UserDashboard.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/create-race',
+    name: 'CreateRaceView',
+    component: () => import('@/views/CreateRace.vue'),
     meta: {
       requiresAuth: true
     }
@@ -34,7 +42,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.path ==='/login' && auth.currentUser) {
-    next('/user')
+    next('/dashboard')
     return;
   }
 

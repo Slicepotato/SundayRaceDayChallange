@@ -25,6 +25,11 @@ export default {
     color: #2c3e50;
   }
 
+  .container {
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+
   .form {
     &__register, &__login {
       ul {
