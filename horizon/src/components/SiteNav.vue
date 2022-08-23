@@ -4,6 +4,9 @@
             <li>
                 <router-link :to="{path: '/'}">Home</router-link>
             </li>
+            <li v-if="isLoggedIn">
+                <router-link :to="{path: '/dashboard'}">Dashboard</router-link>
+            </li>
             <li>
                 <router-link :to="{path: '/login'}" class="login-link">Log in</router-link>
             </li>
@@ -20,8 +23,14 @@
 <script>
 import { onBeforeUnmount } from 'vue';
 import { useStore } from 'vuex';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
+    data() {
+        return {
+            isLoggedIn: false
+        }
+    },
     setup() {
     const store = useStore()
 
@@ -32,6 +41,21 @@ export default {
     return {
       user: store.state.user
     }
+  },
+  mounted() {
+      this.isSignedIn()
+  },    
+  methods: {
+    isSignedIn() {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                this.isLoggedIn = true;
+            } else {
+                this.isLoggedIn = false;
+            } 
+        })
+      }
   }
 }
 </script>
